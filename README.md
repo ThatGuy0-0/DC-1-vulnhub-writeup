@@ -46,7 +46,6 @@ searchsploit Drupal -www
 <h3>Setting the RHOST Parameter</h3>
 <pre>
 set RHOST 192.168.56.108
-run
 </pre>
 <img src="images/7set_RHOST.png" alt="set" width="600"/>
 
