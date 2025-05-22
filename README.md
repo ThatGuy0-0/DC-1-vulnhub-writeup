@@ -7,10 +7,6 @@ This is a walkthrough of the DC:1 virtual machine from VulnHub. It’s a beginne
 <h2>📑 Table of Contents</h2>
 <ul>
   <li><a href="#initial-reconnaissance">🔍 Initial Reconnaissance</a>
-    <ul>
-      <li><a href="#network-discovery">Network Discovery</a></li>
-      <li><a href="#port-scanning-with-nmap">Port Scanning with Nmap</a></li>
-    </ul>
   </li>
   <li><a href="#web-application-enumeration">🌐 Web Application Enumeration</a>
     <ul>
