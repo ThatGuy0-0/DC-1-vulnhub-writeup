@@ -81,7 +81,7 @@ cat /etc/passwd
 <pre>
 cd /home/flag4
 ls
-  cat flag4.txt
+cat flag4.txt
 </pre>
 <img src="images/12cat_flag4.png" alt="flag 4" width="600"/>
 <p>
@@ -100,24 +100,26 @@ ls
 <h3>Accessing MySQL</h3>
 <p>We log into MySQL using the credentials found.</p>
 <pre>
-mysql -u drupaldb -p
+mysql -u dbuser -p
 </pre>
 <img src="images/14in_sql.png" alt="mysql" width="600"/>
 
 <h3>Enumerating Users Table</h3>
-<p>We look at the <code>users</code> table to see account information.</p>
+<p>We look at the <code>users</code> table to see the account information.</p>
 <pre>
 SELECT * FROM users;
 </pre>
 <img src="images/15users_table.png" alt="users table" width="600"/>
 
 <h3>Inspecting Node Table</h3>
-<p>View the content nodes stored in the Drupal site.</p>
+<p>View any hidden content nodes stored in the Drupal site.</p>
 <pre>
 SELECT * FROM node;
 </pre>
 <img src="images/16node_table.png" alt="node table" width="600"/>
-
+<p>
+  We find flag 3. It tells us that we need to use special PERMS. We will need to us <code>-exec</code>.
+</p>
 <h2>🔓 Privilege Escalation</h2>
 
 <h3>Find Has Root Permissions</h3>
