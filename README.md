@@ -11,14 +11,14 @@ This is a walkthrough of the DC:1 virtual machine from VulnHub. It’s a beginne
 <pre>
 netdiscover -r 192.168.0.0/24
 </pre>
-<![Alt Screenshot](images/1netdiscover.png)>
+<img src="images/1netdiscover.png" alt="Netdiscover Output" width="600"/>
 
 <h3>Port Scanning with Nmap</h3>
 <p>Next, we scan the target using <code>nmap</code> to find open ports and services.</p>
 <pre>
 nmap -sS -sV -T4 192.168.0.102
 </pre>
-<img src="nmap.png" alt="nmap scan">
+<img src="images/2nmap" alt="Nmap Output" width="600"/>
 
 <h2>🌐 Web Application Enumeration</h2>
 
