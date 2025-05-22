@@ -130,15 +130,18 @@ sudo -l
 <img src="images/17find_has_root.png" alt="root access" width="600"/>
 
 <h3>Spawning a Root Shell</h3>
-<p>We use a known privilege escalation trick with <code>find</code> to get root access.</p>
+<p>We use a known privilege escalation trick with <code>find</code> to get root access. Let's see what is in the root directory.</p>
 <pre>
-sudo find . -exec /bin/sh \; -quit
+find root/
 </pre>
 <img src="images/18root_file.png" alt="root file" width="600"/>
+<p>
+  There it is, the final flag.
+</p>
 
 <h3>Final Flag</h3>
-<p>After getting root access, we find and read the final flag.</p>
+<p>After getting root access, we find and read the final flag. Let's use that <code>-exec</code> to have a look</p>
 <pre>
-cat /root/flag.txt
+find /root.thefinalflag.txt -type f -exec cat '{}' \;
 </pre>
 <img src="images/19cat_final_flag.png" alt="final flag" width="600"/>
