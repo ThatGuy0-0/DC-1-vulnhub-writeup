@@ -72,7 +72,7 @@ cat flag1.txt
 <pre>
 cat /etc/passwd
 </pre>
-<img src="images/11find_flag1.png" alt="find flag" width="600"/>
+<img src="images/11find_flag4.png" alt="find flag" width="600"/>
 <p>
   We find that there exists a flag4. Let's have a loook.
 </p>
