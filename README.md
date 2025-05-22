@@ -11,7 +11,7 @@ This is a walkthrough of the DC:1 virtual machine from VulnHub. It’s a beginne
 <pre>
 netdiscover -r 192.168.0.0/24
 </pre>
-<img src="netdiscover.png" alt="netdiscover">
+<![Alt Screenshot](images/1netdiscover.png)>
 
 <h3>Port Scanning with Nmap</h3>
 <p>Next, we scan the target using <code>nmap</code> to find open ports and services.</p>
