@@ -16,7 +16,7 @@ sudo netdiscover -i hostname
 <h3>Port Scanning with Nmap</h3>
 <p>Next, we scan the target using <code>nmap</code> to find open ports and services.</p>
 <pre>
-nmap -sC -sV 192.168.0.108
+sudo nmap -sC -sV 192.168.56.108
 </pre>
 <img src="images/2nmap.png" alt="Nmap Output" width="600"/>
 
@@ -29,13 +29,13 @@ nmap -sC -sV 192.168.0.108
 <h3>Recovering Password</h3>
 <p>Drupal has a password reset feature which may expose usernames or other useful information.</p>
 <img src="images/4recover.png" alt="recover" width="600"/>
-
+<p>As you can see, when trying to recover the password for user names "admin". There is a success message, meaning that an admin user does exits.</p>
 <h2>🛠 Exploitation</h2>
 
 <h3>Using Searchsploit to Find Exploits</h3>
 <p>We search for known vulnerabilities in Drupal using Searchsploit. A remote code execution (RCE) vulnerability is found.</p>
 <pre>
-searchsploit drupal -www
+searchsploit Drupal -www
 </pre>
 <img src="images/5search.png" alt="searchsploit" width="600"/>
 
@@ -45,17 +45,17 @@ searchsploit drupal -www
 
 <h3>Setting the RHOST Parameter</h3>
 <pre>
-set RHOST 192.168.0.102
+set RHOST 192.168.56.108
 run
 </pre>
 <img src="images/7set_RHOST.png" alt="set" width="600"/>
 
 <h3>Getting a Meterpreter Session</h3>
-<p>Successful exploitation results in a Meterpreter session.</p>
+<p>Successful exploitation results in a Meterpreter session, gaining us remote access to the server.</p>
 <img src="images/8meterpreter.png" alt="meterpreter" width="600"/>
 
 <h3>Post Exploitation - User Info</h3>
-<p>Check the user context with <code>getuid</code>.</p>
+<p>Check which user we are logged in as by using <code>getuid</code>.</p>
 <img src="images/9id.png" alt="getuid" width="600"/>
 
 <h2>🧾 Flag Collection</h2>
@@ -66,26 +66,37 @@ run
 ls
 cat flag1.txt
 </pre>
-<img src="images/10ls_and_cat_flag.png" alt="Netdiscover Output" width="600"/>
+<img src="images/10ls_and_cat_flag.png" alt="flag1" width="600"/>
 
 <h3>Finding Flag 4</h3>
-<p>Using the <code>find</code> command to locate additional flags.</p>
+<p>Just to have a quick look at /etc/passwd to find any useful information there.</p>
 <pre>
-find / -name flag4.txt 2>/dev/null
+cat /etc/passwd
 </pre>
 <img src="images/11find_flag.png" alt="find flag" width="600"/>
+<p>
+  We find that there exists a flag4. Let's have a loook.
+</p>
 
 <h3>Viewing Flag 4</h3>
 <pre>
-cat /var/www/html/sites/default/files/flag4.txt
+cd /home/flag4
+ls
+  cat flag4.txt
 </pre>
 <img src="images/12cat_flag4.png" alt="flag 4" width="600"/>
+<p>
+  We find that there is still more to be found.
+</p>
 
 <h2>🧩 Drupal Database Analysis</h2>
 
 <h3>Drupal Configuration</h3>
-<p>We search for Drupal database credentials in settings.php or other configuration files.</p>
+<p>After some research I found that Drupal stores there settings file in /sites/default/setttings.php. We search for Drupal database credentials in settings.php.</p>
 <img src="images/13find_db_info.png" alt="db" width="600"/>
+<p>
+  We find some credentials for Drupal's database.
+</p>
 
 <h3>Accessing MySQL</h3>
 <p>We log into MySQL using the credentials found.</p>
