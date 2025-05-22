@@ -145,3 +145,5 @@ find root/
 find /root.thefinalflag.txt -type f -exec cat '{}' \;
 </pre>
 <img src="images/19cat_final_flag.png" alt="final flag" width="600"/>
+
+Mission accomplished! Root access and all flags captured.
