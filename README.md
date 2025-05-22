@@ -18,17 +18,17 @@ netdiscover -r 192.168.0.0/24
 <pre>
 nmap -sS -sV -T4 192.168.0.102
 </pre>
-<img src="images/2nmap" alt="Nmap Output" width="600"/>
+<img src="images/2nmap.png" alt="Nmap Output" width="600"/>
 
 <h2>🌐 Web Application Enumeration</h2>
 
 <h3>Drupal Site Detected</h3>
 <p>Browsing to the IP address reveals a Drupal website. This suggests a possible exploit path.</p>
-<img src="drupal-site.png" alt="Drupal homepage">
+<img src="images/3drupal_site.png" alt="drupal" width="600"/>
 
 <h3>Recovering Password</h3>
 <p>Drupal has a password reset feature which may expose usernames or other useful information.</p>
-<img src="recover-password.png" alt="Drupal password reset">
+<img src="images/4recover.png" alt="recover" width="600"/>
 
 <h2>🛠 Exploitation</h2>
 
@@ -37,22 +37,22 @@ nmap -sS -sV -T4 192.168.0.102
 <pre>
 searchsploit drupal 7
 </pre>
-<img src="searchsploit.png" alt="searchsploit for Drupal 7">
+<img src="images/5search.png" alt="searchsploit" width="600"/>
 
 <h3>Launching Exploit via Metasploit</h3>
 <p>We use Metasploit's module for Drupalgeddon2 to exploit the vulnerability and gain a reverse shell.</p>
-<img src="metasploit.png" alt="Metasploit setup">
+<img src="images/6meta.png" alt="metasploit" width="600"/>
 
 <h3>Setting the RHOST Parameter</h3>
 <pre>
 set RHOST 192.168.0.102
 run
 </pre>
-<img src="set-RHOST.png" alt="Set RHOST">
+<img src="images/7set_RHOST.png" alt="set" width="600"/>
 
 <h3>Getting a Meterpreter Session</h3>
 <p>Successful exploitation results in a Meterpreter session.</p>
-<img src="meterpreter.png" alt="Meterpreter session">
+<img src="images/8meterpreter.png" alt="meterpreter" width="600"/>
 
 <h3>Post Exploitation - User Info</h3>
 <p>Check the user context with <code>getuid</code>.</p>
