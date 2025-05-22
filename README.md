@@ -4,6 +4,54 @@
 This is a walkthrough of the DC:1 virtual machine from VulnHub. It’s a beginner-friendly boot-to-root machine designed to test your penetration testing skills, especially in web exploitation. The target uses a vulnerable version of Drupal CMS, which is the main attack vector.
 </p>
 
+<h2>📑 Table of Contents</h2>
+<ul>
+  <li><a href="#initial-reconnaissance">🔍 Initial Reconnaissance</a>
+    <ul>
+      <li><a href="#network-discovery">Network Discovery</a></li>
+      <li><a href="#port-scanning-with-nmap">Port Scanning with Nmap</a></li>
+    </ul>
+  </li>
+  <li><a href="#web-application-enumeration">🌐 Web Application Enumeration</a>
+    <ul>
+      <li><a href="#drupal-site-detected">Drupal Site Detected</a></li>
+      <li><a href="#recovering-password">Recovering Password</a></li>
+    </ul>
+  </li>
+  <li><a href="#exploitation">🛠 Exploitation</a>
+    <ul>
+      <li><a href="#using-searchsploit-to-find-exploits">Using Searchsploit to Find Exploits</a></li>
+      <li><a href="#launching-exploit-via-metasploit">Launching Exploit via Metasploit</a></li>
+      <li><a href="#setting-the-rhost-parameter">Setting the RHOST Parameter</a></li>
+      <li><a href="#getting-a-meterpreter-session">Getting a Meterpreter Session</a></li>
+      <li><a href="#post-exploitation---user-info">Post Exploitation - User Info</a></li>
+    </ul>
+  </li>
+  <li><a href="#flag-collection">🧾 Flag Collection</a>
+    <ul>
+      <li><a href="#flag-1">Flag 1</a></li>
+      <li><a href="#finding-flag-4">Finding Flag 4</a></li>
+      <li><a href="#viewing-flag-4">Viewing Flag 4</a></li>
+    </ul>
+  </li>
+  <li><a href="#drupal-database-analysis">🧩 Drupal Database Analysis</a>
+    <ul>
+      <li><a href="#drupal-configuration">Drupal Configuration</a></li>
+      <li><a href="#accessing-mysql">Accessing MySQL</a></li>
+      <li><a href="#enumerating-users-table">Enumerating Users Table</a></li>
+      <li><a href="#inspecting-node-table">Inspecting Node Table</a></li>
+    </ul>
+  </li>
+  <li><a href="#privilege-escalation">🔓 Privilege Escalation</a>
+    <ul>
+      <li><a href="#find-has-root-permissions">Find Has Root Permissions</a></li>
+      <li><a href="#spawning-a-root-shell">Spawning a Root Shell</a></li>
+      <li><a href="#final-flag">Final Flag</a></li>
+    </ul>
+  </li>
+</ul>
+
+
 <h2>🔍 Initial Reconnaissance</h2>
 
 <h3>Network Discovery</h3>
