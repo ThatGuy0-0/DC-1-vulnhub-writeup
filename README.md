@@ -9,14 +9,14 @@ This is a walkthrough of the DC:1 virtual machine from VulnHub. It’s a beginne
 <h3>Network Discovery</h3>
 <p>We start by identifying the IP address of the target machine using <code>netdiscover</code>.</p>
 <pre>
-netdiscover -r 192.168.0.0/24
+sudo netdiscover -i hostname
 </pre>
 <img src="images/1netdiscover.png" alt="Netdiscover Output" width="600"/>
 
 <h3>Port Scanning with Nmap</h3>
 <p>Next, we scan the target using <code>nmap</code> to find open ports and services.</p>
 <pre>
-nmap -sS -sV -T4 192.168.0.102
+nmap -sC -sV 192.168.0.108
 </pre>
 <img src="images/2nmap.png" alt="Nmap Output" width="600"/>
 
