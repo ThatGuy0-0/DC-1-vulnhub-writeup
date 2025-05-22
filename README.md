@@ -65,14 +65,14 @@ set RHOST 192.168.56.108
 ls
 cat flag1.txt
 </pre>
-<img src="images/10ls_and_cat_flag.png" alt="flag1" width="600"/>
+<img src="images/10ls_and_cat_flag1.png" alt="flag1" width="600"/>
 
 <h3>Finding Flag 4</h3>
 <p>Just to have a quick look at /etc/passwd to find any useful information there.</p>
 <pre>
 cat /etc/passwd
 </pre>
-<img src="images/11find_flag.png" alt="find flag" width="600"/>
+<img src="images/11find_flag1.png" alt="find flag" width="600"/>
 <p>
   We find that there exists a flag4. Let's have a loook.
 </p>
